@@ -7,7 +7,6 @@ const AuthenticationButton = () => {
   const { isAuthenticated, logout } = useAuth0()
 
   const login = async (event) => {
-    event.preventDefault()
     const url = `https://${configJson.domain}/oauth/token`
 
     const payload = {
