@@ -42,7 +42,7 @@ const AuthenticationButton = () => {
   const loginWithAuth0 = async () => {
     await auth0Client.loginWithRedirect({
       authorizationParams: {
-        redirect_uri: window.location.origin
+        redirect_uri: 'https://vercel-auth0-l59u3sqfl-starla-projects.vercel.app/'
       }
     })
     //logged in. you can get the user profile like this:
