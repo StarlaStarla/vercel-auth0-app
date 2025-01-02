@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from 'axios'
 import configJson from '../../../src/auth_config.json'
+import { createAuth0Client } from '@auth0/auth0-spa-js'
 
 const AuthenticationButton = () => {
-  const { isAuthenticated, logout, auth0Client } = useAuth0()
+  const { isAuthenticated, logout } = useAuth0()
+  const [auth0Client, setAuth0Client] = useState(null)
 
   const login = async (event) => {
     const url = `https://${configJson.domain}/oauth/token`
@@ -25,6 +27,18 @@ const AuthenticationButton = () => {
       console.error('Login Failed: ' + error.response.data.error_description)
     }
   }
+
+  useEffect(() => {
+    const initAuth0 = async () => {
+      const auth0 = await createAuth0Client({
+        domain: 'dev-4dbkhni0tlnfoylr.jp.auth0.com',
+        clientId: '6rhDqNimGsGmWgoAVtfuPKn65clleXAH'
+      })
+      setAuth0Client(auth0)
+    }
+    initAuth0()
+  }, [])
+
   const loginWithAuth0 = async () => {
     await auth0Client.loginWithRedirect({
       authorizationParams: {
