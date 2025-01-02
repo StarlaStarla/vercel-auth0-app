@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+.email-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-input-wrapper {
+    margin-bottom: 16px; /* 添加外边距以产生间距 */
+  }
+  
+  /* 可选择移除最后一个元素的外边距 */
+.email-input-wrapper:last-child {
+    margin-bottom: 0;
+  }
+  
+.email-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0.005em;
+  text-align: left;
+  color: #111928;
+}
+
+.email-input {
+  width: 392px;
+  height: 51px;
+  border: 1px solid #E5E7EB;
+  border-radius: 1px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22.5px;
+  letter-spacing: 0.005em;
+  text-align: left;
+  padding-left: 16px; 
+  color: #6B7280; /* placeholder 文字的颜色 */
+}
+
+.email-input::placeholder {
+  color: #6B7280;
+}
+
